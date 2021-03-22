@@ -9,6 +9,8 @@ const publicDirectory = path.join(__dirname,'../public')
 const viewpath = path.join(__dirname,'../templates/views')
 const partialspath = path.join(__dirname,'../templates/partials')
 
+//adding the env to run in heroku and 3000 to run in local.
+const port = process.env.PORT || 3000
 //configurations
 //setting the hbs so that we can render header and footer common to all pages
 app.set('view engine','hbs')
@@ -70,6 +72,6 @@ app.get('*',(req,res) => {
 
 })
 
-app.listen(3000,()=>{
-    console.log('Server started in 3000 port')
+app.listen(port,()=>{
+    console.log(`Server started in 3000 ${port}`)
 })

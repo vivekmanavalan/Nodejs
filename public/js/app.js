@@ -12,8 +12,9 @@ const msgthree = document.querySelector('#loc')
 weather.addEventListener('submit',(e) => {
     e.preventDefault()
    const searchVal = search.value
-
-    fetch(`http://localhost:3000/weather?address=${searchVal}`).then(response => {
+    //commented for heroku run
+    //fetch(`http://localhost:3000/weather?address=${searchVal}`).then(response => {
+    fetch(`/weather?address=${searchVal}`).then(response => {
     response.json().then(data => {
         if(data.error){
             console.log('error happened')
